@@ -33,7 +33,7 @@ export default function Home() {
   // const [Dou,setDuo] = useState({})
   // let env = 'http://localhost:5001/'
          let env = 'https://enkhjinsback.vercel.app/'
-  let menus = [,"Balance","Incomes/WidthDraw"]
+  let menus = [,"Dashboard","Incomes/WidthDraw"]
   const [menu,setMenu] = useState(menus)
   const [incomeCheck,setIncomecheck] = useState(false)
   const [withdDraw,withdDrawcheck] = useState(false)
@@ -77,7 +77,7 @@ useEffect(() => {
       setIncomecheck(false)
       withdDrawcheck(true)
       comprisecheck(false)
-    } else if(item.target.name == "Balance"){
+    } else if(item.target.name == "Dashboard"){
       setIncomecheck(false)
       withdDrawcheck(false)
       comprisecheck(true)
