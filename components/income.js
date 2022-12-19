@@ -347,8 +347,8 @@ export default function Home() {
 
                         <div className={styles.addNbarimt}>
                             <div className={styles.fuckkk}
-                            ><Button onClick={handler} css={{ backgroundColor: "rgb(252, 213, 53)", color: "Black", fontFamily: "$sans", fontWeight: "500" }}
-                            >Add income </Button><Button onPress={handler1}> Check income statistic</Button></div>
+                            ><Button onClick={handler} auto color="secondary" rounded flat css={{ fontFamily: "$sans", fontWeight: "500" }}
+                            >Add income </Button><Button onPress={handler1} auto color="error" rounded flat> Check income statistic</Button></div>
 
                             <div className={styles.addNbarimttext}>
                                 <div className={styles.description}>
