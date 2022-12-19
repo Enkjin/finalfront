@@ -13,6 +13,7 @@ import axios from 'axios';
 
 export default function register() {
     let option_ids = [0, 1, 2]
+    const [passCheck,setpasscheck] = useState(false);
     const [scrollY, setScrollY] = useState(0);
     const [option_id, setoption_id] = useState(option_ids)
     const [mailcolor,setMailcolor] = useState("success")
@@ -32,6 +33,14 @@ export default function register() {
     ...inputValues,
     [evt.target.name]: value
     })
+    var passw=  /^[A-Za-z]\w{7,14}$/;
+    if (evt.name == "password"){
+        if(value.match(passw)){
+            setpasscheck(true)
+        } else {
+            setpasscheck(false)
+        }
+    }
 
     }
 
@@ -39,34 +48,39 @@ const registerbuttonclick = event => {
 
 
         event.preventDefault();
-
-        if(inputValues['password'] == inputValues['rpassword'] ){
-            axios.post(env+'register',inputValues,{headers})
-            .then((res)=>{
-                if(res.data == "have"){
-                    setError('Алдаа - Бүртгэлтэй майл хаяг байна')
-                    setnof(true)
-                    
-                } else if (res.data == "unsuccessfull"){
-                    setError('Алдаа - Сервер')
-                    setnof(true)
-                    
-                } else {
-                    setError('Амжиллтай үүслээ')
-                    setnof(true)
-                    router.push({
-                        pathname:'/login',
+        if(passCheck){
+            if(inputValues['password'] == inputValues['rpassword'] ){
+                axios.post(env+'register',inputValues,{headers})
+                .then((res)=>{
+                    if(res.data == "have"){
+                        setError('Алдаа - Бүртгэлтэй майл хаяг байна')
+                        setnof(true)
+                        
+                    } else if (res.data == "unsuccessfull"){
+                        setError('Алдаа - Сервер')
+                        setnof(true)
+                        
+                    } else {
+                        setError('Амжиллтай үүслээ')
+                        setnof(true)
+                        router.push({
+                            pathname:'/login',
+                        }
+                          )
+    
                     }
-                      )
-
-                }
-            }).catch((err)=>{console.log(err)})
-
+                }).catch((err)=>{console.log(err)})
+    
+            } else {
+                
+                setError('Алдаа - Нууц үг таарахгүй  байна')
+                setnof(true)
+            }
         } else {
-            
-            setError('Алдаа - Нууц үг таарахгүй  байна')
+            setError('Алдаа - Нууц үг хүчтэй биш байна')
             setnof(true)
         }
+
     }
     const router = useRouter()
 
