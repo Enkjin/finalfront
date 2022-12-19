@@ -120,7 +120,7 @@ useEffect(() => {
 
           <div className={styles.usercontent}>
             {menu.map((item,index)=>{
-              return(<Button onPress={clickButton} name={item} auto  rounded css={{color:"White"}} key={index}>{item}</Button>)
+              return(<Button onPress={clickButton} name={item} auto color="secondary" rounded flat css={{color:"White"}} key={index}>{item}</Button>)
             })}
           </div>
          { dataCheck&&<div className={styles.usercontent1}> 
