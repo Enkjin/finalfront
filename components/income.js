@@ -359,7 +359,7 @@ export default function Home() {
                                 <div className={styles.description}>
                                     <span css={{}}>Tips</span>
                                     <ul>
-                                        <li> Add incom</li>
+                                        <li> Add income </li>
                                         <li> Must have date</li>
                                         <li> Insert type</li>
                                     </ul>
