@@ -232,7 +232,7 @@ export default function comprise() {
                                 <div className={styles.tryieed}>
                                     <p className={styles.cardCategory}>Current balance</p>
                                     <h3 className={styles.cardTitle}>
-                                       {le}<small>Ш</small>
+                                       {le}<small></small>
                                     </h3>
                                 </div>
 
