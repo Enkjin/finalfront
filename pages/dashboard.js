@@ -120,7 +120,7 @@ useEffect(() => {
 
           <div className={styles.usercontent}>
             {menu.map((item,index)=>{
-              return(<Button onPress={clickButton} name={item} auto css={{color:"White"}} key={index}>{item}</Button>)
+              return(<Button onPress={clickButton} name={item} auto  rounded css={{color:"White"}} key={index}>{item}</Button>)
             })}
           </div>
          { dataCheck&&<div className={styles.usercontent1}> 
@@ -134,7 +134,7 @@ useEffect(() => {
           >
 
           </User>
-            <Button onPress={routerpush} css={{ color: "rgb(252, 213, 53)" }} size="xs" >
+            <Button onPress={routerpush}   auto color="error" rounded size="xs" >
               OUT
             </Button>
 
