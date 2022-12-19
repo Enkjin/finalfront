@@ -351,14 +351,14 @@ setLoadingCheck(true)
                         <div className={styles.addNbarimt}>
                             <div className={styles.fuckkk}>
                             <Button onClick={handler} css={{ backgroundColor: "rgb(252, 213, 53)", color: "Black", width: "95%", fontFamily: "$sans", fontWeight: "500" }}
-                            >Зарлага бүртгэх</Button><Button onPress={handler1}> Зарлагын статистик харах</Button></div>
+                            >Add withdraw</Button><Button onPress={handler1}>Check withdraw statistic</Button></div>
                             <div className={styles.addNbarimttext}>
                                 <div className={styles.description}>
-                                    <span css={{}}>Тайлбар</span>
+                                    <span css={{}}>Tips</span>
                                     <ul>
-                                        <li> Зарлага бүртгэх</li>
-                                        <li> Он сар заавал оруулах</li>
-                                        <li> Төрлийг оруулах</li>
+                                        <li> Add withdraw</li>
+                                        <li> Must have date</li>
+                                        <li> Insert type</li>
                                     </ul>
                                 </div>
                             </div>
@@ -377,9 +377,9 @@ setLoadingCheck(true)
                                 shadow={false}
                             >
                                 <Table.Header >
-                                    <Table.Column allowsSorting key="date">Огноо</Table.Column>
-                                    <Table.Column key="category">Төрөл</Table.Column>
-                                    <Table.Column allowsSorting key="sale">Дүн</Table.Column>
+                                    <Table.Column allowsSorting key="date">Date</Table.Column>
+                                    <Table.Column key="category">Type</Table.Column>
+                                    <Table.Column allowsSorting key="sale">Amount</Table.Column>
                                 </Table.Header>
                                 <Table.Body items={userData}
                                 >
@@ -478,7 +478,7 @@ setLoadingCheck(true)
                         <Text id="modal-title" size={18}>
 
                             <Text b size={18}>
-                                Зарлага бүртгэх
+                                Add withdraw
                             </Text>
                         </Text>
                     </Modal.Header>
@@ -528,10 +528,10 @@ setLoadingCheck(true)
                     </Modal.Body>
                     <Modal.Footer>
                         <Button auto flat color="error" onPress={closeHandler} >
-                            Гарах
+                            Exit
                         </Button>
                         <Button auto onPress={savedatas}  >
-                            Хадгалах
+                            Save
                         </Button>
                     </Modal.Footer>
                 </Modal>
@@ -550,7 +550,7 @@ setLoadingCheck(true)
                        
                        
                        { !loadingschck&&dataAv&&<div className={styles.columnsS}>
-                        <Row>2022 оны зарлага сар бүрээр</Row>
+                        <Row>Every month in 2022</Row>
                             <div className={styles.columnsS1}>
                             
                             <br /> 
@@ -581,7 +581,7 @@ setLoadingCheck(true)
                                     }
 
 
-                                </select> &nbsp; он &nbsp; 
+                                </select> &nbsp; year &nbsp; 
 
                                     <select name="hall" id="hall1" onChange={handleChange2} value={eD} defaultValue={11}>
                                         {year.map((e) => {
@@ -590,7 +590,7 @@ setLoadingCheck(true)
 
                                         }
 
-                                    </select> &nbsp; он харьцуулалт  /Мян/</Row>
+                                    </select> &nbsp;  Compare year  /Мян/</Row>
                                    
 
                                     {dataAv && <Line  data={radars}  height={300}/>}
