@@ -110,12 +110,12 @@ export default function comprise() {
             labels: Object.keys(incomes),
             datasets: [
                 {
-                    label: 'Зарлага',
+                    label: 'Withdraw',
                     data: Object.values(withd),
                     backgroundColor: 'rgba(255, 99, 132, 0.5)',
                 },
                 {
-                    label: 'Орлого',
+                    label: 'Income',
                     data: Object.values(incomes),
                     backgroundColor: 'rgba(53, 162, 235, 0.5)',
                 },
@@ -153,7 +153,7 @@ export default function comprise() {
             labels: Object.keys(awithd),
             datasets: [
                 {
-                    label: 'Цэвэр үлдэгдэл',
+                    label: 'Net balance',
                     data: Object.values(awithd),
                     borderColor: 'rgb(255, 99, 132)',
                     backgroundColor: 'rgba(255, 99, 132, 0.5)'
@@ -188,7 +188,7 @@ export default function comprise() {
         return {
             datasets: [
                 {
-                    label: 'Өндөр дүнтэй худалдан авалт сараар',
+                    label: 'High value purchases per month',
                     data: con,
                     backgroundColor: 'rgba(5, 246, 206 )',
                 },
@@ -321,7 +321,7 @@ export default function comprise() {
                                 <Card.Header css={{ display: 'flex', flexDirection: 'column' }} >
 
 
-                                    <div>debt to income ratio in 2022</div>
+                                    <div>Debt to income ratio in 2022</div>
                                     <br />
                                     {dataAv && <Line data={Doughnutdata} />}
 
