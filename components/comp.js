@@ -230,7 +230,7 @@ export default function comprise() {
                             <Card.Header   >
                                 <div className={styles.sda}> <AllInbox fontSize="large" sx={{ color: "white" }} /> </div>
                                 <div className={styles.tryieed}>
-                                    <p className={styles.cardCategory}>Нийт бүртгэл</p>
+                                    <p className={styles.cardCategory}>Current balance</p>
                                     <h3 className={styles.cardTitle}>
                                        {le}<small>Ш</small>
                                     </h3>
@@ -253,7 +253,7 @@ export default function comprise() {
                             <Card.Header   >
                                 <div className={styles.sda1}> <AddCard fontSize="large" sx={{ color: "white" }} /> </div>
                                 <div className={styles.tryieed}>
-                                    <p className={styles.cardCategory}>Нийт Орлого</p>
+                                    <p className={styles.cardCategory}>All incomes</p>
                                     <h3 className={styles.cardTitle}>
                                         {allincome}<small>MNT</small>
                                     </h3>
@@ -276,7 +276,7 @@ export default function comprise() {
                             <Card.Header   >
                                 <div className={styles.sda2}> <Store fontSize="large" sx={{ color: "white" }} /> </div>
                                 <div className={styles.tryieed}>
-                                    <p className={styles.cardCategory}>Нийт Зарлага</p>
+                                    <p className={styles.cardCategory}>All withdraw</p>
                                     <h3 className={styles.cardTitle}>
                                         {allWi} <small>MNT</small>
                                     </h3>
@@ -306,7 +306,7 @@ export default function comprise() {
                         <Grid xs={12} sm={6} md={5}>
                             <Card>
                                 <Card.Header css={{ display: 'flex', flexDirection: 'column' }}>
-                                    <div>2022 оны хэт өндөр дүнтэй зарлага </div>
+                                    <div>Total amount of withdrad in 2022</div>
                                     <br />
                                     {dataAv && <Scatter data={radars} />}
 
@@ -321,7 +321,7 @@ export default function comprise() {
                                 <Card.Header css={{ display: 'flex', flexDirection: 'column' }} >
 
 
-                                    <div>2022 оны өөрийн орлогын харьцаа</div>
+                                    <div>debt to income ratio in 2022</div>
                                     <br />
                                     {dataAv && <Line data={Doughnutdata} />}
 
