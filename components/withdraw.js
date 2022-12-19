@@ -576,7 +576,7 @@ setLoadingCheck(true)
 
                                         }
 
-                                    </select> &nbsp;  Compare year  /Мян/</Row>
+                                    </select> &nbsp;  Compare year  /₮/</Row>
                                    
 
                                     {dataAv && <Line  data={radars}  height={300}/>}
