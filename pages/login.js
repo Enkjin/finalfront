@@ -114,7 +114,7 @@ export default function Login() {
             </div>
            
 
-            <div className={styles.register}> <ul>Гишүү биш ?,</ul> <Link href='/register' > Бүртгүүлэх  </Link></div>
+            <div className={styles.register}> <ul>Гишүүн биш ? </ul> <Link href='/register' > Бүртгүүлэх  </Link></div>
             {nof&&<AddNofi error={error} />}
         </div>
 
