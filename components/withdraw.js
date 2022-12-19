@@ -350,8 +350,8 @@ setLoadingCheck(true)
 
                         <div className={styles.addNbarimt}>
                             <div className={styles.fuckkk}>
-                            <Button onClick={handler} css={{ backgroundColor: "rgb(252, 213, 53)", color: "Black", width: "95%", fontFamily: "$sans", fontWeight: "500" }}
-                            >Add withdraw</Button><Button onPress={handler1}>Check withdraw statistic</Button></div>
+                            <Button onClick={handler} auto color="secondary" rounded flat css={{ fontFamily: "$sans", fontWeight: "500" }}
+                            >Add withdraw</Button><Button onPress={handler1} auto color="error" rounded flat>Check withdraw statistic</Button></div>
                             <div className={styles.addNbarimttext}>
                                 <div className={styles.description}>
                                     <span css={{}}>Tips</span>
