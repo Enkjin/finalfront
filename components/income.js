@@ -109,20 +109,20 @@ export default function Home() {
 
 
         item.map((e) => {
-            if (e.category == "Цалин") {
+            if (e.category == "Income") {
                 job = job + e.sale
-            } else if (e.category == "Бизнес") {
+            } else if (e.category == "Business") {
                 business = business + e.sale
-            } else if (e.category == "Нэмэлт") {
+            } else if (e.category == "Others") {
                 nemelt = nemelt + e.sale
             }
         })
         console.log([job, business, nemelt])
         let datassss = {
             labels: [
-                'Цалин',
-                'Бизнес',
-                'Нэмэлт'
+                'Income',
+                'Business',
+                'Others'
             ],
             datasets: [{
                 data: [job, business, nemelt],
@@ -166,7 +166,7 @@ export default function Home() {
             labels: ['1', ' 2 ', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
             datasets: [
                 {
-                    label: "Cарын орлого",
+                    label: "Income in a month",
                     fill: true,
                     lineTension: 0.1,
                     backgroundColor: 'rgba(75,192,192,0.4)',
@@ -206,8 +206,8 @@ export default function Home() {
 
     function radar(item, s, enddate) {
         let data1, data2
-        let a = { "Цалин": 0, "Бизнес": 0, "Нэмэлт": 0 }
-        let b = { "Цалин": 0, "Бизнес": 0, "Нэмэлт": 0 }
+        let a = { "Income": 0, "Business": 0, "Others": 0 }
+        let b = { "Income": 0, "Business": 0, "Others": 0 }
         item.map((e) => {
             let month = e.date.split('-')[1]
             if (month == s) {
@@ -222,10 +222,10 @@ export default function Home() {
         console.log(a)
 
         return {
-            labels: ['Цалин', 'Бизнес', 'Нэмэлт'],
+            labels: ['Income', 'Business', 'Others'],
             datasets: [
                 {
-                    label: s + ' сар',
+                    label: s + ' month',
                     backgroundColor: 'rgba(179,181,198,0.2)',
                     borderColor: 'rgba(179,181,198,1)',
                     pointBackgroundColor: 'rgba(179,181,198,1)',
@@ -235,7 +235,7 @@ export default function Home() {
                     data: Object.values(a)
                 },
                 {
-                    label: enddate + ' сар',
+                    label: enddate + ' month',
                     backgroundColor: 'rgba(255,99,132,0.2)',
                     borderColor: 'rgba(255,99,132,1)',
                     pointBackgroundColor: 'rgba(255,99,132,1)',
@@ -258,7 +258,7 @@ export default function Home() {
 
         })
 
-        if (inputValues.options == null || inputValues.options == 'Төрөл сонгоно уу') {
+        if (inputValues.options == null || inputValues.options == 'Choose type') {
             setSendbutton(false)
 
         } else if (!(inputValues.incomeval == null || inputValues.incomeval == '')) {
@@ -268,7 +268,7 @@ export default function Home() {
 
         if (inputValues.incomeval == null || inputValues.incomeval == '') {
             setSendbutton(false)
-        } else if (!(inputValues.options == null || inputValues.options == 'Төрөл сонгоно уу')) {
+        } else if (!(inputValues.options == null || inputValues.options == 'Choose type')) {
             setSendbutton(true)
         }
     }
@@ -314,12 +314,10 @@ export default function Home() {
     let option_id = [0, 1, 2, 3]
 
     let options = [
-        { value: 'Төрөл сонгоно уу' },
-        { value: 'Цалин' },
-        { value: 'Бизнес' },
-        { value: 'Нэмэлт орлого' },
-        { value: 'Бусад' },
-        { value: 'Бэлэг' }
+        { value: 'Choose type' },
+        { value: 'Income' },
+        { value: 'Business' },
+        { value: 'Others' }
     ]
 
     return (
@@ -330,7 +328,6 @@ export default function Home() {
 
 
                 {/* <div className={styles.header}>
-
           <div className={styles.usercontent}></div>
           <div className={styles.usercontent1}> <User bordered
             src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
@@ -339,12 +336,10 @@ export default function Home() {
             css={{ color: "White" }}
             description="@tonyreichert"
           >
-
           </User>
             <Button onPress={routerpush} css={{ color: "rgb(252, 213, 53)" }} size="xs" light>
               OUT
             </Button>
-
           </div>
         </div> */}
                 <div className={styles.dashboardCon}>
@@ -437,41 +432,28 @@ export default function Home() {
                                     {monthloop.map((e) => {
                                         return (<option value={e}>{e}</option>)
                                     })
-
                                     }
-
-
                                 </select> &nbsp; сар &nbsp;
-
                                     <select name="hall" id="hall1" onChange={handleChange2} value={eD} defaultValue={11}>
                                         {monthloop.map((e) => {
                                             return (<option value={e}>{e}</option>)
                                         })
-
                                         }
-
                                     </select> &nbsp; сар харьцуулалт  /Мян/</Row>
-
                                 {dataAv && <Radar
                                     data={radars}
                                     options={optionsssss}
                                     color='lightGreen'
                                     width={500}
                                     height={500}
-
                                 />}
-
                             
-
                             </div>
-
                         </div>}
                         {!loadingschck&&dataAv&& <div className={styles.rows} css={{ marginTop: "20px" }}>
                             <div className={styles.columns}>
-
                                 <Row>2022 оны </Row>
                                 {dataAv && <Line
-
                                     data={Lines}
                                     width={600}
                                     height={400}
@@ -479,7 +461,6 @@ export default function Home() {
                               
                             </div>
                             <div className={styles.columns}></div>
-
                         </div>}
                                     
                     </div> */}
@@ -519,7 +500,7 @@ export default function Home() {
                                 type="number"
                                 color="primary"
                                 css={{ height: "45px", width: "170px" }}
-                                placeholder="Дүн"
+                                placeholder="Amount"
 
                             />
                             <Row css={{ marginTop: "20px" }}>
