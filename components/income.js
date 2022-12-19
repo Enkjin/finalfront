@@ -317,7 +317,9 @@ export default function Home() {
         { value: 'Төрөл сонгоно уу' },
         { value: 'Цалин' },
         { value: 'Бизнес' },
-        { value: 'Нэмэлт' }
+        { value: 'Нэмэлт орлого' },
+        { value: 'Бусад' },
+        { value: 'Бэлэг' }
     ]
 
     return (
@@ -351,15 +353,15 @@ export default function Home() {
                         <div className={styles.addNbarimt}>
                             <div className={styles.fuckkk}
                             ><Button onClick={handler} css={{ backgroundColor: "rgb(252, 213, 53)", color: "Black", fontFamily: "$sans", fontWeight: "500" }}
-                            >Орлого бүртгэх</Button><Button onPress={handler1}> Орлогын статистик харах</Button></div>
+                            >Add income </Button><Button onPress={handler1}> Check income statistic</Button></div>
 
                             <div className={styles.addNbarimttext}>
                                 <div className={styles.description}>
-                                    <span css={{}}>Тайлбар</span>
+                                    <span css={{}}>Tips</span>
                                     <ul>
-                                        <li> Орлого бүртгэх</li>
-                                        <li> Он сар заавал оруулах</li>
-                                        <li> Төрлийг оруулах</li>
+                                        <li> Add incom</li>
+                                        <li> Must have date</li>
+                                        <li> Insert type</li>
                                     </ul>
 
 
@@ -380,9 +382,9 @@ export default function Home() {
                                 shadow={false}
                             >
                                 <Table.Header >
-                                    <Table.Column allowsSorting key="date">Огноо</Table.Column>
-                                    <Table.Column key="category">Төрөл</Table.Column>
-                                    <Table.Column allowsSorting key="sale">Дүн</Table.Column>
+                                    <Table.Column allowsSorting key="date">Date</Table.Column>
+                                    <Table.Column key="category">Type</Table.Column>
+                                    <Table.Column allowsSorting key="sale">Amount</Table.Column>
                                 </Table.Header>
                                 <Table.Body items={userData}
                                 >
@@ -495,7 +497,7 @@ export default function Home() {
                         <Text id="modal-title" size={18}>
 
                             <Text b size={18}>
-                                Орлого бүртгэх
+                                Add income
                             </Text>
                         </Text>
                     </Modal.Header>
@@ -564,7 +566,7 @@ export default function Home() {
                             {loadingschck && <Loadings />}
                             {!loadingschck && dataAv && <div className={styles.rows} >
                                 <div className={styles.columns}>
-                                    <Row>НИЙТ ОРЛОГО</Row>
+                                    <Row>All income</Row>
                                     {dataAv && <Doughnut
                                         data={Doughnutdata}
                                         width={600}
