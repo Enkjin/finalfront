@@ -155,10 +155,10 @@ setLoadingCheck(true)
 
     function linchartdevider(item) {
 
-        let Ахуйн = { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0, "12": 0, }
-        let Харилцаа = { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0, "12": 0, }
-        let Амралт = { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0, "12": 0, }
-        let Эрүүл = { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0, "12": 0, }
+        let Util = { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0, "12": 0, }
+        let Community = { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0, "12": 0, }
+        let Holiday = { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0, "12": 0, }
+        let Health = { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0, "12": 0, }
         let Education = { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0, "12": 0, }
         let Food = { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0, "12": 0, }
         let Others = { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0, "12": 0, }
@@ -169,13 +169,13 @@ setLoadingCheck(true)
             {let month = item.date.split('-')[1]
 
             if (item.category == "Household use") {
-                Ахуйн[month] = Ахуйн[month] + item.sale
+                Util[month] = Util[month] + item.sale
             } else if (item.category == "Community") {
-                Харилцаа[month] = Харилцаа[month] + item.sale
+                Community[month] = Community[month] + item.sale
             } else if (item.category == "Recreation") {
-                Амралт[month] = Амралт[month] + item.sale
+                Holiday[month] = Holiday[month] + item.sale
             } else if (item.category == "Health") {
-                Эрүүл[month] = Эрүүл[month] + item.sale
+                Health[month] = Health[month] + item.sale
             } else if (item.category == "Education") {
                 Education[month] = Education[month] + item.sale
             } else if (item.category == "Food") {
@@ -185,8 +185,8 @@ setLoadingCheck(true)
             }}
         })
 
-        let a = ["Ахуйн", "Харилцаа", "Амралт", "Эрүүл", "Education", "Food", "Others"]
-        let aa = [Ахуйн, Харилцаа, Амралт, Эрүүл, Education, Food, Others]
+        let a = ["Util", "Community", "Holiday", "Health", "Education", "Food", "Others"]
+        let aa = [Util, Community, Holiday, Health, Education, Food, Others]
         let b = []
         const colors = [
             'rgba(255, 99, 132,  1)',
@@ -233,7 +233,7 @@ setLoadingCheck(true)
 
         let aa = 0, bb = 0, cc = 0, dd = 0, ee = 0, ff = 0, gg = 0
 
-        let a = ["Ахуйн", "Харилцаа", "Амралт", "Эрүүл", "Education", "Food", "Others"]
+        let a = ["Util", "Community", "Holiday", "Health", "Education", "Food", "Others"]
 
         item.map((e) => {
             let year =  e.date.split('-')[0]
