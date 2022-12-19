@@ -526,10 +526,10 @@ export default function Home() {
                     </Modal.Body>
                     <Modal.Footer>
                         <Button auto flat color="error" onClick={closeHandler}>
-                            Гарах
+                            Exit
                         </Button>
                         <Button auto disabled={!sendbutton} onClick={savedatas} >
-                            Хадгалах
+                            Save
                         </Button>
                     </Modal.Footer>
                 </Modal>
