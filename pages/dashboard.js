@@ -33,7 +33,7 @@ export default function Home() {
   // const [Dou,setDuo] = useState({})
   // let env = 'http://localhost:5001/'
          let env = 'https://enkhjinsback.vercel.app/'
-  let menus = [,"Хянах самбар","Орлого/Зарлага"]
+  let menus = [,"Balance","Incomes/WidthDraw"]
   const [menu,setMenu] = useState(menus)
   const [incomeCheck,setIncomecheck] = useState(false)
   const [withdDraw,withdDrawcheck] = useState(false)
@@ -69,7 +69,7 @@ useEffect(() => {
 
   }
   function clickButton(item){
-    if( item.target.name == "Орлого/Зарлага"){
+    if( item.target.name == "Incomes/WidthDraw"){
       setIncomecheck(true)
       withdDrawcheck(false)
       comprisecheck(false)
@@ -77,7 +77,7 @@ useEffect(() => {
       setIncomecheck(false)
       withdDrawcheck(true)
       comprisecheck(false)
-    } else if(item.target.name == "Хянах самбар"){
+    } else if(item.target.name == "Balance"){
       setIncomecheck(false)
       withdDrawcheck(false)
       comprisecheck(true)
