@@ -304,14 +304,14 @@ setLoadingCheck(true)
             datasets: [
                 {
                     fill: true,
-                    label: sdat + ' он',
+                    label: sdat + '  year',
                     data: Object.values(a),
                     borderColor: 'rgb(53, 162, 235)',
                     backgroundColor: 'rgba(53, 162, 235, 0.5)',
                   },
                   {
                     fill: true,
-                    label: edat + ' он',
+                    label: edat + ' year',
                     data: Object.values(b),
                     borderColor:  'rgba(255, 99, 132,  1)',
                     backgroundColor: 'rgba(255, 99, 132,  0.5)',
@@ -489,7 +489,7 @@ setLoadingCheck(true)
                                 type="number"
                                 color="primary"
                                 css={{ height: "45px", width: "170px" }}
-                                placeholder="Дүн"
+                                placeholder="Amount"
 
                             />
                             <Row css={{ marginTop: "20px" }}>
