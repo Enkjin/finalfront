@@ -557,7 +557,7 @@ export default function Home() {
                                 </div>
                                 <div className={styles.columns} >
 
-                                    <Row>2022 оны </Row>
+                                    <Row>2022 </Row>
                                     {dataAv && <Line
 
                                         data={Lines}
