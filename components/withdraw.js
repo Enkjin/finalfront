@@ -42,14 +42,14 @@ export default function widthDraw() {
     const a = Cookie.get("Token")
     let option_id = [0, 1, 2, 3, 4, 5, 6, 7]
     let options = [
-        { value: 'Төрөл сонгоно уу' },
-        { value: 'Ахуйн хэрэглээ' },
-        { value: 'Харилцаа холбоо' },
-        { value: 'Амралт зугаалга' },
-        { value: 'Эрүүл мэнд' },
-        { value: 'Боловсрол' },
-        { value: 'Хүнс' },
-        { value: 'Бусад' },
+        { value: 'Choose type' },
+        { value: 'Household use' },
+        { value: 'Community' },
+        { value: 'Recreation' },
+        { value: 'Health' },
+        { value: 'Education' },
+        { value: 'Food' },
+        { value: 'Others' },
 
     ]
 
@@ -159,34 +159,34 @@ setLoadingCheck(true)
         let Харилцаа = { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0, "12": 0, }
         let Амралт = { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0, "12": 0, }
         let Эрүүл = { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0, "12": 0, }
-        let Боловсрол = { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0, "12": 0, }
-        let Хүнс = { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0, "12": 0, }
-        let Бусад = { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0, "12": 0, }
+        let Education = { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0, "12": 0, }
+        let Food = { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0, "12": 0, }
+        let Others = { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0, "12": 0, }
 
         item.map((item) => {
             let year =  item.date.split('-')[0]
             if( year == "2022")
             {let month = item.date.split('-')[1]
 
-            if (item.category == "Ахуйн хэрэглээ") {
+            if (item.category == "Household use") {
                 Ахуйн[month] = Ахуйн[month] + item.sale
-            } else if (item.category == "Харилцаа холбоо") {
+            } else if (item.category == "Community") {
                 Харилцаа[month] = Харилцаа[month] + item.sale
-            } else if (item.category == "Амралт зугаалга") {
+            } else if (item.category == "Recreation") {
                 Амралт[month] = Амралт[month] + item.sale
-            } else if (item.category == "Эрүүл мэнд") {
+            } else if (item.category == "Health") {
                 Эрүүл[month] = Эрүүл[month] + item.sale
-            } else if (item.category == "Боловсрол") {
-                Боловсрол[month] = Боловсрол[month] + item.sale
-            } else if (item.category == "Хүнс") {
-                Хүнс[month] = Хүнс[month] + item.sale
-            } else if (item.category == "Бусад") {
-                Бусад[month] = Бусад[month] + item.sale
+            } else if (item.category == "Education") {
+                Education[month] = Education[month] + item.sale
+            } else if (item.category == "Food") {
+                Food[month] = Food[month] + item.sale
+            } else if (item.category == "Others") {
+                Others[month] = Others[month] + item.sale
             }}
         })
 
-        let a = ["Ахуйн", "Харилцаа", "Амралт", "Эрүүл", "Боловсрол", "Хүнс", "Бусад"]
-        let aa = [Ахуйн, Харилцаа, Амралт, Эрүүл, Боловсрол, Хүнс, Бусад]
+        let a = ["Ахуйн", "Харилцаа", "Амралт", "Эрүүл", "Education", "Food", "Others"]
+        let aa = [Ахуйн, Харилцаа, Амралт, Эрүүл, Education, Food, Others]
         let b = []
         const colors = [
             'rgba(255, 99, 132,  1)',
@@ -233,24 +233,24 @@ setLoadingCheck(true)
 
         let aa = 0, bb = 0, cc = 0, dd = 0, ee = 0, ff = 0, gg = 0
 
-        let a = ["Ахуйн", "Харилцаа", "Амралт", "Эрүүл", "Боловсрол", "Хүнс", "Бусад"]
+        let a = ["Ахуйн", "Харилцаа", "Амралт", "Эрүүл", "Education", "Food", "Others"]
 
         item.map((e) => {
             let year =  e.date.split('-')[0]
             if (year == "2022"){
-                if (e.category == "Ахуйн хэрэглээ") {
+                if (e.category == "Household use") {
                     aa = aa + e.sale
-                } else if (e.category == "Харилцаа холбоо") {
+                } else if (e.category == "Community") {
                     bb = bb + e.sale
-                } else if (e.category == "Амралт зугаалга") {
+                } else if (e.category == "Recreation") {
                     cc = cc + e.sale
-                } else if (e.category == "Эрүүл мэнд") {
+                } else if (e.category == "Health") {
                     dd = dd + e.sale
-                } else if (e.category == "Боловсрол") {
+                } else if (e.category == "Education") {
                     ee = ee + e.sale
-                } else if (e.category == "Хүнс") {
+                } else if (e.category == "Food") {
                     ff = ff + e.sale
-                } else if (e.category == "Бусад") {
+                } else if (e.category == "Others") {
                     gg = gg + e.sale
                 }
             }
@@ -421,47 +421,34 @@ setLoadingCheck(true)
                             <br /> <br />
                             {dataAv && <Line options={options_line} height={850} width={1100}
                                 data={Lines} />}
-
                             </div>
                            
-
                         </div>}
-
                        { !loadingschck&&dataAv&&<div className={styles.columnsw}>
                         <Row>2022 оны зарлага нийт</Row>
                             <div className={styles.wrow1}> 
                             
                             <br /> <br /><br />
                                 {dataAv && <Doughnut options={options_d} data={Doughnutdata}  />}
-
                             </div>
                             <br /> <br /><br />
                           <div className={styles.wrow}>
-
                           <Row>< select name="hall" id="hall" onChange={handleChange1} value={sD} defaultValue={10}>
                                     {year.map((e) => {
                                         return (<option value={e}>{e}</option>)
                                     })
-
                                     }
-
-
                                 </select> &nbsp; он &nbsp; 
-
                                     <select name="hall" id="hall1" onChange={handleChange2} value={eD} defaultValue={11}>
                                         {year.map((e) => {
                                             return (<option value={e}>{e}</option>)
                                         })
-
                                         }
-
                                     </select> &nbsp; он харьцуулалт  /Мян/</Row>
                                     {dataAv && <Line  data={radars}  height={200}/>}
-
                           
                           </div>
                         </div>}
-
                         {!dataAv&&!loadingschck &&<div>Үр дүн олдсонгүй</div>}
                     </div> */}
                 </div>
@@ -568,7 +555,6 @@ setLoadingCheck(true)
                             
                             <br /> <br /><br />
                                 {dataAv && <Doughnut options={options_d} data={Doughnutdata}  />}
-
                             </div>
                             <br /> <br /><br /> */}
                           <div className={styles.wrow}>
@@ -590,7 +576,7 @@ setLoadingCheck(true)
 
                                         }
 
-                                    </select> &nbsp;  Compare year  /Мян/</Row>
+                                    </select> &nbsp;  Compare year  /Мян/</Row>
                                    
 
                                     {dataAv && <Line  data={radars}  height={300}/>}
